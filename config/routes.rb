@@ -1,7 +1,11 @@
 DeviseSubdomains::Application.routes.draw do
+  require 'domains'
+  
   devise_for :users
   constraints(Subdomain) do
-    resources :users
+    namespace :admin do
+      resources :users
+    end
   end
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -52,7 +56,7 @@ DeviseSubdomains::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'application#index'
+  root :to => 'home#index'
 
   # See how all your routes lay out with "rake routes"
 
