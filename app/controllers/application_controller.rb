@@ -9,6 +9,11 @@ class ApplicationController < ActionController::Base
     admin_users_url(:subdomain => account_subdomain)
   end
 
+  def after_sign_out_path_for(resource)
+    
+    root_url(:subdomain => false)
+  end
+
   def is_root_domain?
     # return true if there is no subdomain
     result = (request.subdomains.first.present? && request.subdomains.first != "www") ? false : true
