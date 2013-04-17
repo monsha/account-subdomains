@@ -1,9 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  subdomain: MyString
-  name: MyString
+leonardo:
+  subdomain: leonardodavinci
+  name: Leonardo Da vinci
 
-two:
-  subdomain: MyString
-  name: MyString
+steve:
+  subdomain: stevejobs
+  name: Steve Jobs
+
