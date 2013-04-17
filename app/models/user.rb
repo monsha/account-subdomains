@@ -10,4 +10,6 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
   
   belongs_to :account
+  
+  validates :account_id, presence: true
 end
