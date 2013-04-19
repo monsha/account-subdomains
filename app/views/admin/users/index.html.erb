@@ -16,7 +16,10 @@
     <td><%= link_to 'Show', [:admin,user] %></td>
     <td><%= link_to 'Edit', edit_admin_user_url(user) %></td>
     <td><%= link_to 'Destroy', [:admin,user], :confirm => 'Are you sure?',
-                                     :method => :delete %></td>
+                                     :method => :delete %> | 
+        <%= link_to 'Invitation', new_user_invitation_url %>                                     
+    </td>
+                                   
   </tr>
 <% end %>
 </table>

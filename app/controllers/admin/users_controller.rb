@@ -12,7 +12,6 @@ class Admin::UsersController < ApplicationController
     @user.account = current_account
     respond_to do |format|
       if @user.save
-        User.invite!(:email => @user.email)
         format.html  { redirect_to([:admin,@user],
           :notice => 'User was successfully created.') }
         format.json  { render :json => @user,
