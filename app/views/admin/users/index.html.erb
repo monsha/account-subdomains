@@ -1,4 +1,26 @@
 <h1>Users</h1>
-
-<%= current_user.nil? ? 'nulo' : current_user %> | 
-<%= @current_account.nil? ? 'nulo' : @current_account %>
+ 
+<table class="table table-striped">
+  <tr>
+    <th>Email</th>
+    <th>Account</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.email %></td>
+    <td><%= user.account.name %></td>
+    <td><%= link_to 'Show', [:admin,user] %></td>
+    <td><%= link_to 'Edit', edit_admin_user_url(user) %></td>
+    <td><%= link_to 'Destroy', [:admin,user], :confirm => 'Are you sure?',
+                                     :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+ 
+<br />
+ 
+<%= link_to 'New user', new_admin_user_url, :class=>'btn btn-primary' %>
